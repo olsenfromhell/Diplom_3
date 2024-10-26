@@ -43,16 +43,20 @@ public class MainPage {
     }
 
     public void clickLoginBtn() {
-        driver.findElement(loginBtn).click();
+        WebElement element = new WebDriverWait(driver, EnvConfig.EXPLICIT_WAIT)
+                .until(ExpectedConditions.elementToBeClickable(loginBtn));
+
+        element.click();
     }
 
     public void clickOnLogo() {
-        driver.findElement(logo).click();
+        WebElement element = new WebDriverWait(driver, EnvConfig.EXPLICIT_WAIT)
+                .until(ExpectedConditions.elementToBeClickable(loginBtn));
+
+        element.click();
     }
 
     public void clickAccountBtn() {
-        driver.navigate().refresh();
-
         WebElement element = new WebDriverWait(driver, EnvConfig.EXPLICIT_WAIT)
                 .until(ExpectedConditions.elementToBeClickable(accountBtn));
 

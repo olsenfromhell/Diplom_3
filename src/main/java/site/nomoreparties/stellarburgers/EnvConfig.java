@@ -20,6 +20,4 @@ public class EnvConfig {
     // ручки апи
     public static final String REGISTER_API = "/api/auth/register";
     public static final String AUTH_API = "/api/auth/user";
-    public static final String LOGIN_API = "/api/auth/login";
-
 }

@@ -17,7 +17,7 @@ public class ProfilePage {
 
     public void clickExitBtn() {
         new WebDriverWait(driver, EnvConfig.IMPLICIT_WAIT)
-                .until(ExpectedConditions.visibilityOfElementLocated(exitBtn));
+                .until(ExpectedConditions.elementToBeClickable(exitBtn));
         driver.findElement(exitBtn).click();
     }
 

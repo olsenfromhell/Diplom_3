@@ -2,6 +2,7 @@ package site.nomoreparties.stellarburgers.pages.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import site.nomoreparties.stellarburgers.EnvConfig;
@@ -15,10 +16,6 @@ public class LoginPage extends MainPage {
         super();
         this.driver = driver;
     }
-
-    // поля
-    protected String userEmail;
-    protected String userPassword;
 
     // локаторы
     private final By emailInput = By.xpath("//*[contains(@name,'name')]");
@@ -56,7 +53,10 @@ public class LoginPage extends MainPage {
     }
 
     public void clickLoginBtn() {
-        driver.findElement(loginBtn).click();
+        WebElement element = new WebDriverWait(driver, EnvConfig.EXPLICIT_WAIT)
+                .until(ExpectedConditions.elementToBeClickable(loginBtn));
+
+        element.click();
     }
 
 }
